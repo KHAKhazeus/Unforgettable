@@ -9,7 +9,7 @@ app.use(cors({
   origin: '*'
 }));
 app.use(bodyParser());
-app.use(checkToken())
+app.use(checkToken());
 app.use(static('./public'));
 routes(app);
 app.listen(3000);

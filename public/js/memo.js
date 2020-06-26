@@ -102,7 +102,7 @@ window.onload = function () {
     window.defaultColor = "#fefabc";
     window.popup = {};
     popup = window.popup;
-    console.log(window.localStorage.getItem('todo_token'))
+    console.log(window.localStorage.getItem('todo_token'));
     if (window.localStorage.getItem('todo_token') != null) {
         Ajax.post('/auth/checkToken', {
             token: window.localStorage.getItem('todo_token'),

@@ -35,7 +35,7 @@
 
       request.open(GET, url, true);
       if (opt.token) {
-        request.setRequestHeader("authorization", 'Bearer ' + opt.token)
+        request.setRequestHeader("authorization", 'Bearer ' + opt.token);
       }
       request.send(null);
     },
@@ -66,12 +66,12 @@
       request.open('POST', url, true);
       request.setRequestHeader("Content-Type", "application/json");
       if (opt.token) {
-        request.setRequestHeader("authorization", 'Bearer ' + opt.token)
+        request.setRequestHeader("authorization", 'Bearer ' + opt.token);
       }
       console.log(opt.data);
       request.send(JSON.stringify(opt.data));
     }
-  }
+  };
 
 
 })();

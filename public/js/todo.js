@@ -18,7 +18,7 @@ function update() {
       if (!itemData.completed) {
         activeCount++;
       } else {
-        completedCount++
+        completedCount++;
       }
     }
 
@@ -50,11 +50,11 @@ function update() {
       });
       item.addEventListener('touchmove', function (e) {
         e.preventDefault();
-        e.stopPropagation()
+        e.stopPropagation();
         this.endX = e.changedTouches[0].clientX;
-        let distance = this.startX - this.endX
+        let distance = this.startX - this.endX;
         if (distance > 0) {
-          this.style.transform = `translate3d(${-distance}px, 0, 0)`
+          this.style.transform = `translate3d(${-distance}px, 0, 0)`;
           if (distance > 80) {
             data.items.splice(index, 1);
             update();
@@ -64,23 +64,23 @@ function update() {
 
       item.addEventListener('touchend', function (e) {
         e.preventDefault();
-        e.stopPropagation()
-        this.style.transform = `translate3d(0, 0, 0)`
+        e.stopPropagation();
+        this.style.transform = `translate3d(0, 0, 0)`;
       });
 
       var label = item.querySelector('.todo-label');
-      var timeOutEvent
+      var timeOutEvent;
       label.addEventListener('touchstart', function (e) {
         longClick = 0;
         timeOutEvent = setTimeout(function () {
           longClick = 1;
         }, 300);
-      })
+      });
       label.addEventListener('touchmove', function (e) {
         clearTimeout(timeOutEvent);
         timeOutEvent = 0;
         e.preventDefault();
-      })
+      });
       label.addEventListener('touchend', function (e) {
         clearTimeout(timeOutEvent);
         if (timeOutEvent != 0 && longClick == 1) {
@@ -120,7 +120,7 @@ function update() {
 
         }
         return false;
-      })
+      });
 
       label.addEventListener('dblclick', function () {
         item.classList.add(CL_EDITING);
@@ -210,7 +210,7 @@ function jumpMemo(){
 }
 
 window.onload = function () {
-  console.log(window.localStorage.getItem('todo_token'))
+  console.log(window.localStorage.getItem('todo_token'));
   if (window.localStorage.getItem('todo_token') != null) {
     Ajax.post('/auth/checkToken', {
       token: window.localStorage.getItem('todo_token'),
@@ -255,7 +255,7 @@ window.onload = function () {
     newTodo.addEventListener('keyup', function (ev) {
       if (ev.keyCode != 13) return; // Enter
 
-      addinput()
+      addinput();
     }, false);
 
 
@@ -300,21 +300,21 @@ window.onload = function () {
 
 var _btn = $(".btn-slide-bar"),
   slideBar = $(".slide-bar");
-slideBar.style.transform = 'translate3d(-150px, 0, 0)'
+slideBar.style.transform = 'translate3d(-150px, 0, 0)';
 
-loadType()
+loadType();
 
 
 _btn.onclick = function (e) {
   e.preventDefault();
   e.stopPropagation();
-  slideBar.style.transform = 'translate3d(0, 0, 0)'
-}
+  slideBar.style.transform = 'translate3d(0, 0, 0)';
+};
 slideBar.onclick = function (e) {
   e.preventDefault();
   e.stopPropagation();
-  slideBar.style.transform = 'translate3d(-150px, 0, 0)'
-}
+  slideBar.style.transform = 'translate3d(-150px, 0, 0)';
+};
 
 function logout(){
   window.localStorage.removeItem('todo_token');
@@ -335,14 +335,14 @@ function loadType() {
       slideBar.children[0].innerHTML = '<li>' + '' + '</li>';
       slideBar.children[0].innerHTML += '<li onclick="jumpMemo()">' + 'Memo' + '</li>';
       slideBar.children[0].innerHTML += '<li onclick="filter(\'\')">' + '全部' + '</li>';
-      $("#typelist").innerHTML=''
+      $("#typelist").innerHTML='';
       data.types.forEach(function (item) {
-        $("#typelist").innerHTML += '<option>' + item.typeContent + '</option>'
-        slideBar.children[0].innerHTML += '<li tid=' + item.id + ' onclick="filter(\'' + item.typeContent + '\')">' + item.typeContent + '</li>'
-      })
+        $("#typelist").innerHTML += '<option>' + item.typeContent + '</option>';
+        slideBar.children[0].innerHTML += '<li tid=' + item.id + ' onclick="filter(\'' + item.typeContent + '\')">' + item.typeContent + '</li>';
+      });
       slideBar.children[0].innerHTML += '<li onclick="addType()">+</li>';
       slideBar.children[0].innerHTML += '<li onclick="logout()">Logout</li>';
-      slideBar.children[0].innerHTML += '<li onclick="randomColor()">Change Color</li>'
+      slideBar.children[0].innerHTML += '<li onclick="randomColor()">Change Color</li>';
     }
   });
 }
@@ -363,17 +363,17 @@ function addType() {
           alert(data.message);
         }
       }
-    })
+    });
   }
 }
 
 function filter(typeContent) {
-  model.data.selectType = typeContent
-  update()
+  model.data.selectType = typeContent;
+  update();
 }
 
 function addinput() {
-  var content = $('.new-todo').value
+  var content = $('.new-todo').value;
   if (content == '') {
     alert('input msg is empty');
     return;

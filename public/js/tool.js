@@ -22,7 +22,7 @@ function getQueryVariable(variable) {
   return (false);
 }
 
-var animationURL = ["/eyes.html", "/diary.html"]
+var animationURL = ["/eyes.html", "/diary.html"];
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
