@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" name="viewport" />
+    <title>Checkout</title>
+    <link rel="stylesheet" type="text/css" href="/memoStatic/css/checkout.css">
+    <script src="/memoStatic/js/memoDetail.js"></script>
+</head>
+<body>
+
+<div class="gameshop">
+
+    <div class="gameshop__header">
+        <div class="gameshop__logo-wrapper">
+            Memo
+        </div>
+
+        <div class="gameshop__header-info">
+            <span class="gameshop__date">{{.date}}</span>
+        </div>
+    </div>
+
+    <div class="gameshop__subheader-wrapper">
+        <div class="gameshop__subheader">
+            <h1 class="gameshop__username">MemoUser No.{{.userId}}, Hi</h1>
+            <span class="gameshop__help-text">you've memoed ({{.quantity}}) items in our app:</span>
+        </div>
+    </div>
+
+    <div class="gameshop__cart">
+        <h2 class="gameshop__cart-title">Memos:</h2>
+
+        <ul class="gameshop__cart-list">
+            {{range $ele := .memos}}
+                <li class="gameshop__cart-item total-item">
+                    <span class="gameshop__index">{{$ele.Index}}</span>
+                    <span class="gameshop__item-name">{{$ele.Title}}</span>
+                    <span class="gameshop__item-price">×</span>
+                </li>
+            {{end}}
+            <li class="gameshop__cart-item total-item">
+                <span class="gameshop__cart-total">Keep it up!</span>
+                <span class="gameshop__item-price"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="gameshop__footer">
+        <button class="back">Back</button>
+    </div>
+</div>
+
+<script id='liItem' type='text/template'>
+    <li class="gameshop__cart-item total-item">
+        <span class="gameshop__index">3</span>
+        <span class="gameshop__item-name">All Stars</span>
+        <span class="gameshop__item-price">$95.00</span>
+    </li>
+</script>
+
+
+</body>
+</html>

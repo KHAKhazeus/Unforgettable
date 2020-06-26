@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Unforgettable</title>
+  <meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport" />
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/register.css">
+</head>
+
+<body>
+  <div class="todoapp">
+    <header class="header">
+      <h1>Register</h1>
+      <!-- Add New Item -->
+    </header>
+
+    <section class="main">
+      <span class="new-user-span" for="username">username:</span>
+      <input id="username" class="new-user" type="text" placeholder="enter your username" autofocus>
+      <span class="new-user-span" for="password">password:</span>
+      <input id="password" class="new-user" type="password">
+      <span class="new-user-span" for="password">password again:</span>
+      <input id="password2" class="new-user" type="password">
+      <input class="new-user" type="submit" value="确定" onclick="register()">
+      <a href="/login.html"><button class="new-user">Login</button></a>
+    </section>
+  </div>
+  <script src="./js/http.js"></script>
+  <script src="./js/tool.js"></script>
+  <script src="./js/register.js"></script>
+</body>
+
+</html>

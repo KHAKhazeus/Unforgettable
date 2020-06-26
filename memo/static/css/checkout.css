@@ -1,0 +1,388 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(to right, #67b26f, #4ca2cd);
+    font-family: "Source Sans Pro", "Helvetica", sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.inspired-by {
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.gameshop {
+    position: relative;
+    left: 50%;
+    display: inline-block;
+    /*min-width: 500px;*/
+    max-width: 100%;
+    width: auto;
+    margin: 50px auto 25px;
+    padding: 20px 0;
+    clear: both;
+
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.gameshop__header {
+    display: flex;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+
+    padding: 30px 30px 45px;
+    background: #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.gameshop__logo-wrapper {
+    flex: 1 0 40%;
+}
+
+.gameshop__logo {
+    display: block;
+    width: 50px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.gameshop__header-info {
+    flex: 1 0 50%;
+}
+
+.gameshop__date,
+.gameshop__ref {
+    display: block;
+    font-size: 19px;
+    color: #aaa;
+    font-weight: 300;
+}
+
+.gameshop__date {
+    margin-bottom: 5px;
+}
+
+.gameshop__subheader-wrapper {
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.gameshop__subheader {
+    padding: 0 45px 0 40px;
+    border-left: 5px solid #6a02e0;
+}
+
+.gameshop__username {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.gameshop__help-text {
+    color: #aaa;
+    font-weight: 300;
+}
+
+.gameshop__cart {
+    display: block;
+    padding: 25px 30px 45px;
+}
+
+.gameshop__cart-title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.gameshop__cart-list {
+    margin: 0;
+    padding: 0 15px;
+    list-style: none;
+}
+
+.gameshop__cart-item {
+    display: block;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    border-top: 2px dashed #aaa;
+
+    font-size: 18px;
+}
+
+.gameshop__cart-item:first-child {
+    border-top: 0;
+}
+
+.gameshop__cart-item:last-child {
+    margin-bottom: 0;
+    border-top: 2px solid #b85407;
+}
+
+.gameshop__index {
+    padding-right: 15px;
+    color: #aaa;
+    font-weight: 300;
+}
+
+.gameshop__item-name {
+    color: #aaa;
+    font-weight: 300;
+}
+
+.gameshop__item-price {
+    float: right;
+    letter-spacing: 1px;
+}
+
+.gameshop__cart-total {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.gameshop__footer {
+    position: relative;
+    padding: 30px 20px;
+    border-top: 2px dashed #FF84A1;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+}
+
+button {
+    display: inline;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.gameshop__footer::before,
+.gameshop__footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border: 4px solid transparent;
+
+    -webkit-transform: translateY(calc(-50% - 1px));
+    -ms-transform: translateY(calc(-50% - 1px));
+    -o-transform: translateY(calc(-50% - 1px));
+    transform: translateY(calc(-50% - 1px));
+}
+
+.gameshop__footer::before {
+    left: 0;
+    border-left: 7px solid #ff85a1;
+}
+
+.gameshop__footer::after {
+    right: 0;
+    border-right: 7px solid #ff85a1;
+}
+
+.gameshop__barcode {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    height: auto;
+}
+
+/**
+ * gameshop Animations
+ */
+
+@keyframes show-gameshop {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateX(-50%);
+    }
+
+    85% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(-50%);
+    }
+}
+
+.gameshop {
+    transform-origin: top left;
+    animation: show-gameshop 1s ease-out forwards;
+}
+
+@keyframes show-subheader {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gameshop__subheader {
+    opacity: 0;
+    animation: show-subheader 1s 0.5s ease-out forwards;
+}
+
+@keyframes slide-down {
+    to {
+        transform: perspective(100px) rotateX(0) translate3d(0, 0, 0);
+    }
+}
+
+.gameshop__cart {
+    background-color: #fff;
+
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    transform: perspective(100px) rotateX(-90deg) translate3d(0, 0, 0);
+
+    animation: slide-down 0.4s 2s ease-out forwards;
+}
+
+.gameshop__footer {
+    background-color: #fff;
+
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    transform: perspective(100px) rotateX(-90deg) translate3d(0, 0, 0);
+
+    animation: slide-down 0.4s 2.5s ease-out forwards;
+}
+
+@keyframes show-cart-title {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gameshop__cart-title {
+    opacity: 0;
+    transform: translateY(10px);
+
+    animation: show-cart-title 0.5s 2.25s ease-in forwards;
+}
+
+@keyframes show-cart-item {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn5 {
+    position: relative;
+    transition: 300ms;
+    overflow: hidden;
+}
+.btn5:hover {
+    color: #6374A5;
+}
+.btn5:before {
+    z-index: -1;
+    border-radius: 100%;
+    transition: 400ms ease;
+    margin-top: 5px;
+    margin-left: 30px;
+    background: white;
+    height: 0px;
+    width: 0px;
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+}
+.btn5:hover:before {
+    height: 200px;
+    width: 200px;
+    margin: -75px;
+    opacity: 1;
+}
+
+.gameshop__cart-item {
+    opacity: 0;
+    transform: translateX(-30px);
+
+    animation: show-cart-item 0.3s 2.75s ease-in forwards;
+}
+
+.gameshop__cart-item:nth-child(2) {
+    animation-delay: 2.9s;
+}
+
+.gameshop__cart-item:nth-child(3) {
+    animation-delay: 3.05s;
+}
+
+.gameshop__cart-item:nth-child(4) {
+    animation-delay: 3.2s;
+}
+
+.back {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #af5b4c;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.back:hover {background-color: #8e4a3e
+}
+
+.back:active {
+    background-color: #8e4a3e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.finished {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.finished:hover {background-color: #3e8e41}
+
+.finished:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

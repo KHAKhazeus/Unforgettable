@@ -1,0 +1,254 @@
+/*
+
+Thanks to DonSinDRom
+For the original design please refer to DonSinDRom
+
+*/
+
+/* **************
+   Quick Reset
+************** */
+html {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background: #f15928;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  justify-content: center;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* **************
+   Style
+************** */
+.box {
+  width: 50vmin;
+  height: 50vmin;
+}
+.sepal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.sepal:hover .petal--horizontal,
+.sepal:hover .petal--vertical,
+.sepal:hover .petal--diagonal,
+.sepal:hover .petal--diagonal-reversed {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.petal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border: 5vmin solid #550424;
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.1);
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.petal--horizontal {
+  border-radius: 0 100%;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  -webkit-animation-name: rotating45;
+  animation-name: rotating45;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.petal--vertical {
+  border-radius: 100% 0;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  -webkit-animation-name: rotating45;
+  animation-name: rotating45;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.petal--diagonal {
+  border-radius: 100% 0;
+  -webkit-animation-name: rotating--reverse;
+  animation-name: rotating--reverse;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.petal--diagonal-reversed {
+  border-radius: 0 100%;
+  -webkit-animation-name: rotating--reverse;
+  animation-name: rotating--reverse;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.lotus {
+  width: calc(50% + 5vmin);
+  height: calc(50% + 5vmin);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border: 5vmin solid #550424;
+  border-radius: 50%;
+  background: #f8a444;
+  background: linear-gradient(135deg, #f69637 0%, #f69637 50%, #f8a444 50%, #f8a444 100%);
+}
+.lotus:before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background-color: #fff;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 5vmin solid #550424;
+}
+.lotus:after {
+  content: '';
+  position: absolute;
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #fff;
+  top: -5vmin;
+  right: -5vmin;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  background: #f8a444;
+  background: linear-gradient(135deg, #f69637 0%, #f69637 50%, #f8a444 50%, #f8a444 100%);
+}
+@-webkit-keyframes rotating45 {
+  from {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+}
+@keyframes rotating45 {
+  from {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
+  }
+}
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotating--reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotating--reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
