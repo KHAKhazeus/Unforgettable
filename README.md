@@ -36,6 +36,10 @@ Unforgettable由一个todolist和sticker board组成，sticker board我称它为
 
   没使用80端口是因为其他项目nginx占用了80端口
 
+### Github仓库
+
+https://github.com/KHAKhazeus/Unforgettable
+
 ## 基本功能
 
 1. 新增任务
@@ -78,7 +82,7 @@ Unforgettable由一个todolist和sticker board组成，sticker board我称它为
 
 ## 功能演示
 
-![result](/Users/kha/Desktop/Junior Second/SPL/Unforgettable-1750114-程子鸣/md-image/result.gif)
+![result](https://github.com/KHAKhazeus/Unforgettable/raw/master/md-image/result.gif)
 
 ## 给老师的留言
 
